@@ -25,6 +25,11 @@ for(x=1; x<=100; x++){
         console.log("FizzBuzz");
     }
     if(x % 3 != 0 && x %  5 != 0){
-       console.log(x);
+        const para = document.createElement("li");
+        const node = document.createTextNode(x);
+        para.appendChild(node);
+        const element = document.getElementById("prova");
+        element.appendChild(para);
+        console.log(x);
     }
 }
