@@ -1,6 +1,6 @@
 let x;
 for(x=1; x<=100; x++){
-    if(x%3==0){
+    if(x%3==0 && !((x % 3 == 0) && (x % 5 == 0))){
         const para = document.createElement("li");
         const node = document.createTextNode("Fizz")
         para.appendChild(node);
@@ -8,7 +8,7 @@ for(x=1; x<=100; x++){
         element.appendChild(para);
         console.log("Fizz");
     }
-    if(x % 5 == 0) {
+    if((x % 5 == 0) && !((x % 3 == 0) && (x % 5 == 0))) {
         const para = document.createElement("li");
         const node = document.createTextNode("Buzz")
         para.appendChild(node);
