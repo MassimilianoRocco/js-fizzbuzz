@@ -1,35 +1,24 @@
-let x;
-for(x=1; x<=100; x++){
-    if(x%3==0 && !((x % 3 == 0) && (x % 5 == 0))){
-        const para = document.createElement("li");
-        const node = document.createTextNode("Fizz")
-        para.appendChild(node);
-        const element = document.getElementById("prova");
-        element.appendChild(para);
-        console.log("Fizz");
-    }
-    if((x % 5 == 0) && !((x % 3 == 0) && (x % 5 == 0))) {
-        const para = document.createElement("li");
-        const node = document.createTextNode("Buzz")
-        para.appendChild(node);
-        const element = document.getElementById("prova");
-        element.appendChild(para);
-        console.log("Buzz");
-    }
-    if((x % 3 == 0) && (x % 5 == 0)){
-        const para = document.createElement("li");
-        const node = document.createTextNode("FizzBuzz")
-        para.appendChild(node);
-        const element = document.getElementById("prova");
-        element.appendChild(para);
+const rowElem = document.getElementById("row");
+
+for(let x=1; x<=100; x++){
+    const boxElem = document.createElement("div");
+
+    if(x%15 == 0){
         console.log("FizzBuzz");
+        boxElem.innerHTML= "FizzBuzz";
     }
-    if(x % 3 != 0 && x %  5 != 0){
-        const para = document.createElement("li");
-        const node = document.createTextNode(x);
-        para.appendChild(node);
-        const element = document.getElementById("prova");
-        element.appendChild(para);
+    else if(x%3 == 0){
+        console.log("fizz");
+        boxElem.innerHTML= "Fizz";
+        
+    }
+    else if(x%5 == 0){
+        console.log("Buzz");
+        boxElem.innerHTML= "Buzz";
+    }
+    else{
         console.log(x);
+        boxElem.innerHTML= x;
     }
+    rowElem.append(boxElem);
 }
